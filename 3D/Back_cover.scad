@@ -1,0 +1,98 @@
+$fn=200;
+
+difference()
+{
+    union()
+    {
+        difference()
+        {
+            cylinder(d1=75,d2=71,h=16.6);
+            translate([0,0,1.5])
+                cylinder(d=80,h=16.6);
+        }
+        translate([-24,18,0])
+            cylinder(d=7,h=8.5);
+        translate([24,-18,0])
+            cylinder(d=7,h=8.5);
+        intersection()
+        {
+            cylinder(d1=75,d2=71,h=16.6);
+            for(i=[0:3])
+                rotate([0,0,45+i*90])
+                    translate([-40,-1,0])
+                        cube([10,2,8.5]);
+        }
+        difference()
+        {
+            intersection()
+            {
+                union()
+                {
+                    translate([-4,-42,0])
+                        cube([8,20,10.1]);
+                    translate([-6.75,35,0])
+                        difference()
+                        {
+                            translate([-1.75,0,0])
+                                cube([13.5,10,4.6]);
+                            translate([0,0,4.6])
+                                rotate([-90,0,0])
+                                    cylinder(d=3.5,h=10);
+                        }
+                    translate([6.75,35,0])
+                        difference()
+                        {
+                            translate([-1.75,0,0])
+                                cube([3.5,10,4.6]);
+                            translate([0,0,4.6])
+                                rotate([-90,0,0])
+                                    cylinder(d=3.5,h=10);
+                        }
+                }
+                cylinder(d1=80,d2=76,h=16.6);
+            }
+            translate([0,0,-0.001])
+                cylinder(d1=75,d2=71,h=16.6);
+        }
+    }
+    translate([-24,18,-0.001])
+        cylinder(d1=6,d2=0.0001,h=3);
+    translate([-24,18,-0.001])
+        cylinder(d=3.5,h=8.502);
+    translate([24,-18,-0.001])
+        cylinder(d1=6,d2=0.0001,h=3);
+    translate([24,-18,-0.001])
+        cylinder(d=3.5,h=8.502);
+    translate([-20,11,-0.001])
+        cube([3,16.5,2]);
+}
+            
+    translate([-4,-34.1,0])
+        cube([8,2,3.5]);
+    translate([-4,21.6,0])
+        cube([8,2,3.5]);
+difference()
+{
+    union()
+    {
+        translate([-21,-6,0])
+            cube([5,12,5.5]);
+        translate([16,-6,0])
+            cube([5,12,5.5]);
+    }
+    translate([0,-32,3.75])
+        rotate([-90,0,0])
+            hull()
+            {
+                translate([-15,0,0])
+                    cylinder(d=4.5,h=53.5);
+                translate([15,0,0])
+                    cylinder(d=4.5,h=53.5);
+            }
+}
+
+
+
+
+
+
